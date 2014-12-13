@@ -9,8 +9,9 @@ Watches items in the Steam Holiday Auction.
 
 ## Instructions
 
-### Unix
+Modify the `auctionItems.txt` file to contain a valid item page from the auction such as the examples in the file.
 
+### Unix
 Run `watch.sh` to see live updates or `auctionWatcher.py` to check once.
 
 ### Windows
