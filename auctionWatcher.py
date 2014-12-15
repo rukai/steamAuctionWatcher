@@ -39,8 +39,9 @@ def displayAuctionItems(items):
 def main():
     #Show when current auction round ends.
     testData = getPage("http://steamcommunity.com/auction/item/1890-2014-Holiday-Profile")
-    endDate = searchValue("This auction round will end at (.*?)\.", testData)
-    print("Auction ends at", endDate) #Scrape from holiday profile
+    #endDate = searchValue(r'This auction round will end at (.*?)\.', testData) #Maybe this form is sometimes used?
+    endDate = searchValue(r'<span class="sep_text">\s*(.*?)left to bid in this auction round', testData)
+    print("Auction ends in", endDate)
     
     #Show status of each auction item
     displayAuctionItems(getAuctionItems())
